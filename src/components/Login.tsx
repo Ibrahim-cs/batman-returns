@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import styled from "styled-components";
 
@@ -23,6 +23,10 @@ const Input = styled.input`
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+`;
+
+const Text = styled.p`
+  margin-top: 20px;
 `;
 
 const Button = styled.button`
@@ -72,6 +76,9 @@ const Login = () => {
         placeholder="Password"
       />
       <Button onClick={handleLogin}>Login</Button>
+      <Text>
+        Create an account? <Link to="/Signup">Signup</Link>
+      </Text>
     </Container>
   );
 };
